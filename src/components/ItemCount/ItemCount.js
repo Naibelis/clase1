@@ -2,13 +2,19 @@ import { useState } from "react";
 
 function ItemCount({ stock, initial, onAdd }) {
   const [count, setCount] = useState(initial);
-  
+
   const modCount = (operation) => {
     if (operation === "resta" && count > 0) {
       setCount(count - 1);
     }
     if (operation === "suma" && count < stock) {
       setCount(count + 1);
+    }
+  };
+
+  const fnOnAdd = () => {
+    if (count <= stock) {
+      onAdd(count);
     }
   };
 
@@ -24,7 +30,9 @@ function ItemCount({ stock, initial, onAdd }) {
         </button>
       </div>
       <div className="d-flex w-25">
-        <button className="btn btn-outline-success" onClick={onAdd(count)}>Agregar al carrito</button>
+        <button className="btn btn-outline-success" onClick={fnOnAdd}>
+          Agregar al carrito
+        </button>
       </div>
     </>
   );
