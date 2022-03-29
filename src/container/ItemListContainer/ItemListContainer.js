@@ -1,7 +1,7 @@
 import "./ItemListContainer.css";
 import ItemCount from "../../components/ItemCount/ItemCount";
 import { useEffect, useState } from "react";
-import ItemList from "../ItemList/ItemList";
+import ItemList from "../../components/ItemList/ItemList";
 import { mock } from "../../components/helpers/mock";
 
 function ItemListContainer({ greeting }) {
@@ -24,16 +24,10 @@ function ItemListContainer({ greeting }) {
 
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h1 className="saludo">{greeting}</h1>
-            <ItemCount stock={5} initial={1} onAdd={onAdd} />
-            {compro ? <p>Se ha comprado la cantidad de: {total}</p> : <></>}
-            {loading ? <h2>Cargando...</h2> : <ItemList items={items} />}
-          </div>
-        </div>
-      </div>
+      <h1 className="saludo">{greeting}</h1>
+      <ItemCount stock={5} initial={1} onAdd={onAdd} />
+      {compro ? <p>Se ha comprado la cantidad de: {total}</p> : <></>}
+      {loading ? <h2>Cargando...</h2> : <ItemList items={items} />}
     </>
   );
 }
