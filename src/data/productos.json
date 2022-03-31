@@ -1,0 +1,67 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "title": "Paseo y atención",
+      "description": "Paseo a los caninos",
+      "category": "actividad",
+      "price": "1200",
+      "stock": "8",
+      "pictureUrl": "https://www.snau.es/blog/wp-content/uploads/2019/02/perros_paseo.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Adiestramiento canino",
+      "description": "Aprende a entender y enseñar a tu perro",
+      "category": "actividad",
+      "price": "3700",
+      "stock": "10",
+      "pictureUrl": "https://soyunperro.com/wp-content/uploads/como-adiestrar-un-perro-7-1.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Etendiendo la reactividad de tu perro",
+      "description": "Aprende temás específicos y avanzados sobre tu canino",
+      "category": "curso",
+      "price": "2400",
+      "stock": "20",
+      "pictureUrl": "https://i0.wp.com/aprendeconkala.com/wp-content/uploads/2020/09/curso-online-de-reactividad-en-perros.jpg?fit=900%2C900&ssl=1"
+    },
+    {
+      "id": "4",
+      "title": "Como educar a tu cachorro en casa",
+      "description": "Educar a tu perro",
+      "category": "curso",
+      "price": "2400",
+      "stock": "20",
+      "pictureUrl": "https://cdn2.salud180.com/sites/default/files/styles/medium/public/field/image/2015/02/recibir_un_nuevo_cachorro_en_casa.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Pechera",
+      "description": "Para mayor comidad a tu perro",
+      "category": "accesorio",
+      "price": "1500",
+      "stock": "55",
+      "pictureUrl": "https://cdn.shopify.com/s/files/1/0185/9786/products/3d8cf0ed.jpg?v=1619200508"
+    },
+    {
+      "id": "6",
+      "title": "Collarin",
+      "description": "Para paseos breves",
+      "category": "accesorio",
+      "price": "800",
+      "stock": "50",
+      "pictureUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxXUSso_A9zwbNUKnLqpRs7Yv0gp7dhj5ZqA&usqp=CAU"
+    },
+    {
+      "id": "7",
+      "title": "Mordedor",
+      "description": "Para los dientes",
+      "category": "accesorio",
+      "price": "900",
+      "stock": "70",
+      "pictureUrl": "https://mascotapro.com/wp-content/uploads/ViviBear-Mordedor-interactivo-para-perros-con-ranuras-dentales.jpg"
+    }
+  ]
+}

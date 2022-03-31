@@ -1,12 +1,17 @@
+import { Col, Row } from "react-bootstrap";
 import Item from "../../components/Item/Item";
 
 function ItemList({ items }) {
   return (
     <>
-      <h1>ItemList</h1>
-      {items.map((item) => (
-        <Item item={item} />
-      ))}
+      <h3>Catálogo</h3>
+      <Row className="my-2 justify-content-around">
+        {items.map((item) => (
+          <Col xs={5} xl={4} className="">
+            <Item item={item} />
+          </Col>
+        ))}
+      </Row>
     </>
   );
 }

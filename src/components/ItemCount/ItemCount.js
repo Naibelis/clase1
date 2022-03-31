@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "react-bootstrap";
 
 function ItemCount({ stock, initial, onAdd }) {
   const [count, setCount] = useState(initial);
@@ -20,19 +21,19 @@ function ItemCount({ stock, initial, onAdd }) {
 
   return (
     <>
-      <div className="d-flex justify-content-between my-2 w-25">
-        <button className="btn btn-primary" onClick={() => modCount("resta")}>
+      <div className="d-flex justify-content-around my-2">
+        <Button variant="primary" size="sm" onClick={() => modCount("resta")}>
           -
-        </button>
+        </Button>
         <span className="mx-3">{count}</span>
-        <button className="btn btn-primary" onClick={() => modCount("suma")}>
+        <Button variant="primary" size="sm" onClick={() => modCount("suma")}>
           +
-        </button>
+        </Button>
       </div>
-      <div className="d-flex w-25">
-        <button className="btn btn-outline-success" onClick={fnOnAdd}>
+      <div className="d-flex justify-content-center">
+        <Button variant="primary" size="sm" onClick={fnOnAdd}>
           Agregar al carrito
-        </button>
+        </Button>
       </div>
     </>
   );
