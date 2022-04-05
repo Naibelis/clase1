@@ -1,19 +1,53 @@
-import { Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import ItemCount from "../ItemCount/ItemCount";
 
 function ItemDetail({ item }) {
+  const [total, setTotal] = useState(0);
+  const [stock, setStock] = useState(item.stock);
+  const [show, setShow] = useState(true);
+
+  const onAdd = (count) => {
+    if (stock >= count) {
+      setTotal(count);
+      setShow(false);
+
+    } else {
+      console.log(`No hay stock!`);
+    }
+  };
+
+  useEffect(() => {
+    console.log(`Se han agregado ${total} unidades del item id: ${item.id}`);
+    setStock(stock - total);
+  }, [total])
+
   return (
     <>
       {!item ? (
         <h1>Producto no existe</h1>
       ) : (
-        <Container className="text-center">
-          <h1>{item.title}</h1>
-          <p>Id: {item.id}</p>
-          <p>Descripcion: {item.description}</p>
-          <p>Precio: {item.price}</p>
-          <p>Stock: {item.stock}</p>
-          <p>Categoria: {item.category}</p>
-          <img src={item.pictureUrl} alt={item.title} height={400} />
+        <Container className="text-center my-3">
+          <Row className="justify-content-center">
+            <Col md={8} lg={5}>
+              <Card>
+                <Card.Header>
+                  <h1>{item.title}</h1>
+                </Card.Header>
+                <Card.Body>
+                  <img src={item.pictureUrl} alt={item.title} width={200} />
+                  <p><b>Id:</b> {item.id}</p>
+                  <p><b>Descripcion:</b> {item.description}</p>
+                  <p><b>Precio:</b> {item.price}</p>
+                  <p><b>Stock:</b> {stock}</p>
+                  <p><b>Categoria:</b> {item.category}</p>
+                </Card.Body>
+                <Card.Footer>
+                  {show ? <ItemCount max={5} initial={1} onAdd={onAdd} /> : <Button variant="success" href="/cart">Terminar compra</Button>}
+                </Card.Footer>
+              </Card>
+            </Col>
+          </Row>
         </Container>
       )}
     </>

@@ -29,7 +29,7 @@ function ItemListContainer({ greeting }) {
   // }, [total]);
 
   return (
-    <Container>
+    <Container className="my-3">
       <h1 className="saludo text-center">{greeting}</h1>
       <br />
       {loading ? <h2>Cargando...</h2> : <ItemList items={items} />}

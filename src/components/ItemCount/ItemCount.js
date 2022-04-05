@@ -1,37 +1,34 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 
-function ItemCount({ stock, initial, onAdd }) {
+function ItemCount({ max, initial, onAdd }) {
   const [count, setCount] = useState(initial);
 
   const modCount = (operation) => {
     if (operation === "resta" && count > 0) {
       setCount(count - 1);
     }
-    if (operation === "suma" && count < stock) {
+    if (operation === "suma" && count < max) {
       setCount(count + 1);
-    }
-  };
-
-  const fnOnAdd = () => {
-    if (count <= stock) {
-      onAdd(count);
     }
   };
 
   return (
     <>
-      <div className="d-flex justify-content-around my-2">
+      <div className="d-flex justify-content-center my-2">
         <Button variant="primary" size="sm" onClick={() => modCount("resta")}>
           -
         </Button>
-        <span className="mx-3">{count}</span>
+        <span className="mx-4">{count}</span>
         <Button variant="primary" size="sm" onClick={() => modCount("suma")}>
           +
         </Button>
       </div>
       <div className="d-flex justify-content-center">
-        <Button variant="primary" size="sm" onClick={fnOnAdd}>
+        <Button variant="primary" size="sm" onClick={(evt) => {
+          onAdd(count);
+          setCount(initial);
+        }}>
           Agregar al carrito
         </Button>
       </div>
