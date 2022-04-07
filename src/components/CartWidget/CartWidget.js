@@ -1,13 +1,14 @@
 import { Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import carrito from "../../shopping_cart_black_24dp.svg";
 import "./CartWidget.css";
 
 function CartWidget({ variant }) {
   return (
     <Nav className="me-auto">
-      <Nav.Link href="/cart">
+      <Link to="/cart">
         <img className={variant} alt="carrito" src={carrito} />
-      </Nav.Link>
+      </Link>
     </Nav>);
 }
 

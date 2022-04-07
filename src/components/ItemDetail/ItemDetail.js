@@ -1,17 +1,21 @@
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
+import { useCartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 
 function ItemDetail({ item }) {
+  const { addToCart } = useCartContext();
+
   const [total, setTotal] = useState(0);
   const [stock, setStock] = useState(item.stock);
   const [show, setShow] = useState(true);
 
   const onAdd = (count) => {
     if (stock >= count) {
+      addToCart(item, count);
       setTotal(count);
       setShow(false);
-
     } else {
       console.log(`No hay stock!`);
     }
@@ -43,7 +47,7 @@ function ItemDetail({ item }) {
                   <p><b>Categoria:</b> {item.category}</p>
                 </Card.Body>
                 <Card.Footer>
-                  {show ? <ItemCount max={5} initial={1} onAdd={onAdd} /> : <Button variant="success" href="/cart">Terminar compra</Button>}
+                  {show ? <ItemCount max={5} initial={1} onAdd={onAdd} /> : <Link to='/cart'><Button variant="success">Ir al carrito</Button></Link>}
                 </Card.Footer>
               </Card>
             </Col>

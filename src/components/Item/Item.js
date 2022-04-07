@@ -1,4 +1,5 @@
 import { Card, ListGroup, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Item({ item }) {
   return (
@@ -14,7 +15,9 @@ function Item({ item }) {
           </ListGroup>
         </Card.Body>
         <Card.Footer className="text-center">
-          <Button variant="success" href={"/detalle/" + item.id}>Ver detalle</Button>
+          <Link to={"/detalle/" + item.id}>
+            <Button variant="success" href={"/detalle/" + item.id}>Ver detalle</Button>
+          </Link>
         </Card.Footer>
       </Card>
     </>
