@@ -47,7 +47,7 @@ function ItemDetail({ item }) {
                   <p><b>Categoria:</b> {item.category}</p>
                 </Card.Body>
                 <Card.Footer>
-                  {show ? <ItemCount max={5} initial={1} onAdd={onAdd} /> : <Link to='/cart'><Button variant="success">Ir al carrito</Button></Link>}
+                  {show ? <ItemCount max={5} initial={1} onAdd={onAdd} /> : <Link to='/cart'><Button variant="success">Terminar mi compra</Button></Link>}
                 </Card.Footer>
               </Card>
             </Col>

@@ -8,9 +8,9 @@ export default function CartContextProvider({ children }) {
     const [cartItems, setCartItems] = useState([]);
 
     function addToCart(item, quantity) {
-        const itemIndex = cartItems.findIndex((i) => i.item.id == item.id);
+        const itemIndex = cartItems.findIndex((i) => i.item.id === item.id);
         console.log({ itemIndex, cartItems })
-        if (itemIndex != -1) {
+        if (itemIndex !== -1) {
             cartItems[itemIndex].quantity += quantity;
             setCartItems(cartItems)
         } else {
@@ -19,7 +19,7 @@ export default function CartContextProvider({ children }) {
     }
 
     function removeFromCart(itemId) {
-        const newCartItems = cartItems.filter((i) => i.id === itemId);
+        const newCartItems = cartItems.filter((i) => i.item.id !== itemId);
         setCartItems(newCartItems);
     }
 
