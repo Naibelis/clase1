@@ -1,6 +1,6 @@
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { mock } from "../../components/helpers/mock";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 
 function ItemDetailContainer() {
@@ -9,13 +9,15 @@ function ItemDetailContainer() {
   const { detalleId } = useParams();
 
   useEffect(() => {
-    mock
-      .then((resp) => {
-        const res = resp.filter((p) => p.id === detalleId)[0];
-        setItem(res);
+    const db = getFirestore();
+    const q = doc(db, "items", detalleId);
+    getDoc(q)
+      .then((snapshot) => {
+        setItem({ id: snapshot.id, ...snapshot.data() });
       })
+      .catch(err => console.log(err))
       .finally(() => setLoading(false));
-  }, []);
+  }, [detalleId]);
 
   return <>{loading ? <h2>Cargando...</h2> : <ItemDetail item={item} />}</>;
 }

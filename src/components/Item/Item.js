@@ -16,7 +16,7 @@ function Item({ item }) {
         </Card.Body>
         <Card.Footer className="text-center">
           <Link to={"/detalle/" + item.id}>
-            <Button variant="success" href={"/detalle/" + item.id}>Ver detalle</Button>
+            <Button variant="success">Ver detalle</Button>
           </Link>
         </Card.Footer>
       </Card>

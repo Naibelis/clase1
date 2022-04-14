@@ -26,7 +26,7 @@ function Cart() {
                     <Col md={10}>
                         <h1>Carrito</h1>
                         {cartItems.map((cartItem) =>
-                        (<ListGroup>
+                        (<ListGroup key={cartItem}>
                             <ListGroupItem>
                                 <p>{cartItem.item.title}</p>
                                 <p>Precio: ${cartItem.item.price}</p>
