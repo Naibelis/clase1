@@ -7,7 +7,7 @@ function ItemList({ items }) {
       <h3>Catálogo</h3>
       <Row className="my-2 justify-content-around">
         {items.map((item) => (
-          <Col key={item} xs={5} xl={4} className="">
+          <Col key={item.id} xs={5} xl={4} className="">
             <Item item={item} />
           </Col>
         ))}
