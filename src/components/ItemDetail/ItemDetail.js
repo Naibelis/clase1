@@ -24,7 +24,7 @@ function ItemDetail({ item }) {
   useEffect(() => {
     console.log(`Se han agregado ${total} unidades del item id: ${item.id}`);
     setStock(stock - total);
-  }, [total])
+  }, [stock, total])
 
   return (
     <>
@@ -47,7 +47,12 @@ function ItemDetail({ item }) {
                   <p><b>Categoria:</b> {item.category}</p>
                 </Card.Body>
                 <Card.Footer>
-                  {show ? <ItemCount max={5} initial={1} onAdd={onAdd} /> : <Link to='/cart'><Button variant="success">Terminar mi compra</Button></Link>}
+                  {show
+                    ?
+                    <ItemCount max={5} initial={1} onAdd={onAdd} />
+                    :
+                    <Link to='/cart'><Button variant="success">Ir al carrito</Button></Link>
+                  }
                 </Card.Footer>
               </Card>
             </Col>
