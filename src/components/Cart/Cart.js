@@ -25,7 +25,7 @@ function Cart() {
         const form = event.currentTarget;
         event.preventDefault();
         setValidated(true);
-        if (formData.email != formData.confirmEmail) {
+        if (formData.email !== formData.confirmEmail) {
             return setEmailInvalid(true);
         }
 
