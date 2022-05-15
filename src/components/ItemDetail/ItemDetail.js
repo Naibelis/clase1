@@ -24,7 +24,8 @@ function ItemDetail({ item }) {
   useEffect(() => {
     console.log(`Se han agregado ${total} unidades del item id: ${item.id}`);
     setStock(stock - total);
-  }, [stock, total, item])
+    // eslint-disable-next-line
+  }, [total])
 
   return (
     <>
