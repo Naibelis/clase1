@@ -9,10 +9,9 @@ export default function CartContextProvider({ children }) {
 
     function addToCart(item, quantity) {
         const itemIndex = cartItems.findIndex((i) => i.item.id === item.id);
-        console.log({ itemIndex, cartItems })
         if (itemIndex !== -1) {
             cartItems[itemIndex].quantity += quantity;
-            setCartItems(cartItems)
+            setCartItems([...cartItems])
         } else {
             setCartItems([...cartItems, { item, quantity }])
         }
