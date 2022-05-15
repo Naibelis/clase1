@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Button, Col, FloatingLabel, Form, Row } from "react-bootstrap";
 
 function CartForm({ validated, submitHandler, formData, setFormData }) {
